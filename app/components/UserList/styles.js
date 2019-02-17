@@ -10,6 +10,10 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
+  nameAndMessageContainer: {
+    marginLeft: 16,
+    justifyContent: 'space-between',
+  },
 
   rightContainer: {
     width: 50,
@@ -17,9 +21,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  nameContainer: {
-    marginLeft: 16,
-  },
+  nameContainer: {},
   iconContainer: {},
 });
 export default styles;

@@ -17,7 +17,8 @@ export const data = [
     id: 3,
     name: 'Tor Molovuch',
     time: new Date().getTime(),
-    lastMessage: 'Hello',
+    lastMessage:
+      'HelloHelloHelloHelloHelloHelloHelloHello Hello HelloHelloHello Hello Hello Hello Hello',
     countNewMessage: 3,
   },
   {
