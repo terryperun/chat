@@ -7,11 +7,14 @@ const enhance = compose(
   withNavigation,
   withHandlers({
     cutMessage: (props) => (message) => {
-      const shortMessage = message.substring(0, 40) + '...';
+      const shortMessage = message.substring(0, 20) + '...';
       return shortMessage;
     },
     onPress: (props) => () => {
-      props.navigation.navigate('Chat', {});
+      props.navigation.navigate('Chat', {
+        id: props.id,
+        name: props.name,
+      });
     },
   }),
 );

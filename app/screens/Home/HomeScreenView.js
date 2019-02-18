@@ -8,6 +8,7 @@ const HomeScreenView = () => {
   const items = data.map((i) => (
     <UserList
       key={i.id}
+      id={i.id}
       name={i.name}
       time={i.time}
       lastMessage={i.lastMessage}
