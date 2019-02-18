@@ -1,10 +1,24 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const HomeScreenView = () => (
-  <View>
-    <Text>Chat list</Text>
-  </View>
-);
+import { UserList } from '../../components';
+import { data } from '../../mocks';
+
+const HomeScreenView = () => {
+  const items = data.map((i) => (
+    <UserList
+      key={i.id}
+      name={i.name}
+      time={i.time}
+      lastMessage={i.lastMessage}
+      countNewMessage={i.countNewMessage}
+    />
+  ));
+  return (
+    <View>
+      <View>{items}</View>
+    </View>
+  );
+};
 
 export default HomeScreenView;
