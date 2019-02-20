@@ -12,13 +12,15 @@
     "expo": "^32.0.0",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native-keyboard-aware-scroll-view": "^0.8.0",
     "react-navigation": "2",
     "react-redux": "^6.0.0",
     "recompose": "^0.30.0",
     "redux": "^4.0.1",
     "redux-actions": "^2.6.4",
     "redux-thunk": "^2.3.0",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
