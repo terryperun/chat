@@ -3,7 +3,7 @@ import types from './messageTypes';
 import uuid from 'uuid/v4';
 
 const initialState = {
-  historyMessage: [
+  messages: [
     {
       id: uuid(),
       fromUser: 'Reeves',
@@ -72,7 +72,7 @@ const messageReducer = handleActions(
       return {
         ...state,
         isLoading: false,
-        historyMessage: [action.payload, ...state.historyMessage],
+        messages: [action.payload, ...state.messages],
       };
     },
     [types.ADD_MESSAGE_ERROR]: (state, action) => ({
@@ -88,7 +88,7 @@ const messageReducer = handleActions(
     [types.ALL_MESSAGE_OK]: (state, action) => ({
       ...state,
       isLoading: false,
-      // historyMessage: action.payload.newTodo,
+      // messages: action.payload.newTodo,
     }),
     [types.ALL_MESSAGE_ERROR]: (state, action) => ({
       ...state,

@@ -1,12 +1,7 @@
 import * as actions from './messageActions';
-// import Api from '../../api/Api';
-// import { createTask } from '../../utils/creators';
-import { historyMessage } from '../../mocks';
-// import { historyMessage } from '../../../mocks';
 
 export const addMessage = (body) => async (dispatch) => {
   dispatch(actions.addMessageStart());
-
   try {
     dispatch(actions.addMessageOk(body));
   } catch (error) {
