@@ -24,7 +24,13 @@ const ChatScreenView = ({
       <FlatList
         data={messages}
         renderItem={({ item, index, section }) => (
-          <View key={index} style={s.messageContainer}>
+          <View
+            key={index}
+            style={[
+              s.messageContainer,
+              item.fromUser === 'Taras' && s.userSend,
+            ]}
+          >
             <View style={s.message}>
               <Text>{item.message}</Text>
             </View>
@@ -43,10 +49,8 @@ const ChatScreenView = ({
           style={s.input}
           value={messageInputText}
           onChangeText={setMessageInputText}
+          onSend={onSend}
         />
-        <TouchableOpacity onPress={onSend}>
-          <Text>Send message</Text>
-        </TouchableOpacity>
       </View>
     </View>
     // </KeyboardAwareScrollView>

@@ -13,6 +13,10 @@ const styles = StyleSheet.create({
     minHeight: 30,
     width: 100,
   },
+
+  userSend: {
+    alignItems: 'flex-end',
+  },
   inputContainer: {
     backgroundColor: 'green',
   },
