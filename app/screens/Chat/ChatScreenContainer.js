@@ -34,14 +34,16 @@ const enhance = compose(
   withHandlers({
     onSend: (props) => () => {
       const body = (text) => ({
-        fromUser: 'Reeves',
-        toUser: 'Taras',
+        fromUser: 'Taras',
+        toUser: 'Reeves',
         message: text,
         dateTime: new Date(2019, 2, 19),
       });
       const mess = body(props.messageInputText);
-      props.sendMessage(mess);
-      props.setMessageInputText('');
+      if (props.messageInputText.trim().length > 0) {
+        props.sendMessage(mess);
+        props.setMessageInputText('');
+      }
     },
   }),
 );

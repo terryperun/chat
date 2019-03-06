@@ -12,8 +12,12 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   textInput: {
-    height: 60,
+    height: 50,
     flex: 1,
+    marginLeft: 16,
+  },
+  send: {
+    marginRight: 16,
   },
 });
 
