@@ -5,21 +5,20 @@ import moment from 'moment';
 
 const RenderItem = ({ item, index, messages }) => {
   const itemIndex = (index) => {
-    if (index > 0) {
-      return index - 1;
+    if (index < messages.length - 1) {
+      return index + 1;
     }
     return index;
   };
 
   isSenderSame = (currentMessage, prevMessage) =>
-    prevMessage - currentMessage > 10800000;
+    currentMessage - prevMessage > 10800000;
 
   const firstMessageDate = index === messages.length - 1;
 
-  const titleTime = moment(
-    messages[itemIndex(index)].dateTime,
-    'x',
-  ).format('DD MMM YYYY hh:mm a');
+  const titleTime = moment(item.dateTime, 'x').format(
+    'DD MMM YYYY hh:mm a',
+  );
 
   const title = isSenderSame(
     item.dateTime,
@@ -32,6 +31,7 @@ const RenderItem = ({ item, index, messages }) => {
 
   return (
     <View style={s.container}>
+      <View>{title}</View>
       <View
         key={index}
         style={[
@@ -48,7 +48,6 @@ const RenderItem = ({ item, index, messages }) => {
           <Text>{item.message}</Text>
         </View>
       </View>
-      <View>{title}</View>
     </View>
   );
 };

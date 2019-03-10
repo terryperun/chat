@@ -5,20 +5,11 @@ import * as messageOperations from '../../modules/message/messageOperations';
 import { withNavigation } from 'react-navigation';
 import uuid from 'uuid/v4';
 
-import s from './styles';
-
 const mapStateToProps = (state) => ({
   state: state,
   data: state.message.data,
   messages: state.message.messages,
 });
-
-const sortForData = (arr) => {
-  let time;
-  const sorted = arr.reduce((acc, current) => {
-    time = current.dataTime;
-  }, {});
-};
 
 const enhance = compose(
   connect(
@@ -41,7 +32,7 @@ const enhance = compose(
         fromUser: 'Taras',
         toUser: 'Reeves',
         message: text,
-        dateTime: new Date().getTime().toString(),
+        dateTime: new Date().getTime(),
       });
       const mess = body(props.messageInputText);
       if (props.messageInputText.trim().length > 0) {
