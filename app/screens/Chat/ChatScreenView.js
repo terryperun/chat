@@ -1,9 +1,8 @@
 import React from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
-// import { TextInput } from 'recompose';
-// import Input from '../../components/Input/Input';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Input } from '../../components';
+import RenderItem from '../../components/RenderItem/RenderItem';
 
 import s from './styles';
 
@@ -23,27 +22,15 @@ const ChatScreenView = ({
     <View style={s.container}>
       <FlatList
         data={messages}
-        renderItem={({ item, index, section }) => (
-          <View
-            key={index}
-            style={[
-              s.messageContainer,
-              item.fromUser === 'Taras' && s.userSend,
-            ]}
-          >
-            <View style={s.message}>
-              <Text>{item.message}</Text>
-            </View>
-          </View>
+        renderItem={({ item, index }) => (
+          <RenderItem item={item} index={index} messages={messages} />
         )}
         keyExtractor={(item, index) => item + index}
         inverted
       />
 
       <View style={s.inputContainer}>
-        <Text>
-          id: {id}, name: {name}
-        </Text>
+        <Text>name: {name}</Text>
         <Input
           multiline
           style={s.input}
