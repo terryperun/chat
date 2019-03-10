@@ -31,22 +31,24 @@ const RenderItem = ({ item, index, messages }) => {
   ) : null;
 
   return (
-    <View
-      key={index}
-      style={[
-        s.messageContainer,
-        item.fromUser === 'Taras' && s.userSend,
-      ]}
-    >
-      {firstMessageDate ? (
-        <View style={s.timeTitle}>
-          <Text>{titleTime}</Text>
+    <View style={s.container}>
+      <View
+        key={index}
+        style={[
+          s.messageContainer,
+          item.fromUser === 'Taras' && s.userSend,
+        ]}
+      >
+        {firstMessageDate ? (
+          <View style={s.timeTitle}>
+            <Text>{titleTime}</Text>
+          </View>
+        ) : null}
+        <View style={s.message}>
+          <Text>{item.message}</Text>
         </View>
-      ) : null}
-      <View style={s.message}>
-        <Text>{item.message}</Text>
       </View>
-      {title}
+      <View>{title}</View>
     </View>
   );
 };
