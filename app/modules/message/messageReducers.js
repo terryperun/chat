@@ -6,31 +6,45 @@ const initialState = {
   messages: [
     {
       id: uuid(),
-      fromUser: 'Reeves',
-      toUser: 'Taras',
-      message: 'Hello',
+      fromUser: 'Taras',
+      toUser: 'Reeves',
+      message: '6',
+      dateTime: '1552862500000',
+    },
+    {
+      id: uuid(),
+      fromUser: 'Taras',
+      toUser: 'Reeves',
+      message: '5',
       dateTime: '1552860000000',
     },
     {
       id: uuid(),
       fromUser: 'Taras',
       toUser: 'Reeves',
-      message: 'Hello its test',
-      dateTime: '1552861800000',
+      message: '4',
+      dateTime: '1532046058000',
     },
     {
       id: uuid(),
       fromUser: 'Reeves',
       toUser: 'Taras',
-      message: 'Hello',
-      dateTime: '1552863600000',
+      message: '3',
+      dateTime: '1532046000000',
     },
     {
       id: uuid(),
-      fromUser: 'Taras',
-      toUser: 'Reeves',
-      message: 'Hello its test',
-      dateTime: '1552867200000',
+      fromUser: 'Reeves',
+      toUser: 'Taras',
+      message: '2',
+      dateTime: '1530407718000',
+    },
+    {
+      id: uuid(),
+      fromUser: 'Reeves',
+      toUser: 'Taras',
+      message: '1',
+      dateTime: '1520404418000',
     },
   ],
   data: [
@@ -68,7 +82,6 @@ const messageReducer = handleActions(
       error: null,
     }),
     [types.ADD_MESSAGE_OK]: (state, action) => {
-      console.log('IN_REDUCER==============================', action);
       return {
         ...state,
         isLoading: false,
