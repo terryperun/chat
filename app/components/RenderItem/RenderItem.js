@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import s from './styles';
+import moment from 'moment';
 
 const RenderItem = ({ item, index, messages }) => {
   const itemIndex = (index) => {
@@ -15,9 +16,10 @@ const RenderItem = ({ item, index, messages }) => {
 
   const firstMessageDate = index === messages.length - 1;
 
-  const titleTime = new Date(
-    Number(item.dateTime),
-  ).toLocaleDateString();
+  const titleTime = moment(
+    messages[itemIndex(index)].dateTime,
+    'x',
+  ).format('DD MMM YYYY hh:mm a');
 
   const title = isSenderSame(
     item.dateTime,
@@ -36,7 +38,11 @@ const RenderItem = ({ item, index, messages }) => {
         item.fromUser === 'Taras' && s.userSend,
       ]}
     >
-      {firstMessageDate ? <Text>{titleTime}</Text> : null}
+      {firstMessageDate ? (
+        <View style={s.timeTitle}>
+          <Text>{titleTime}</Text>
+        </View>
+      ) : null}
       <View style={s.message}>
         <Text>{item.message}</Text>
       </View>

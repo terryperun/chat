@@ -9,42 +9,42 @@ const initialState = {
       fromUser: 'Taras',
       toUser: 'Reeves',
       message: '6',
-      dateTime: '1552862500000',
+      dateTime: 1522082500000, //Mon Mar 26 2018 19:41:40
     },
     {
       id: uuid(),
       fromUser: 'Taras',
       toUser: 'Reeves',
       message: '5',
-      dateTime: '1552860000000',
+      dateTime: 1522080000000, //Mon Mar 26 2018 19:00:00
     },
     {
       id: uuid(),
       fromUser: 'Taras',
       toUser: 'Reeves',
       message: '4',
-      dateTime: '1532046058000',
+      dateTime: 1522060000000, //Mon Mar 26 2018 13:26:40
     },
     {
       id: uuid(),
       fromUser: 'Reeves',
       toUser: 'Taras',
       message: '3',
-      dateTime: '1532046000000',
+      dateTime: 1512046000000, //Thu Nov 30 2017 14:46:40
     },
     {
       id: uuid(),
       fromUser: 'Reeves',
       toUser: 'Taras',
       message: '2',
-      dateTime: '1530407718000',
+      dateTime: 1500407718000, //Tue Jul 18 2017 22:55:18
     },
     {
       id: uuid(),
       fromUser: 'Reeves',
       toUser: 'Taras',
       message: '1',
-      dateTime: '1520404418000',
+      dateTime: 1500404418000, //Tue Jul 18 2017 22:00:18
     },
   ],
   data: [
