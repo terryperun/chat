@@ -30,7 +30,6 @@ const ChatScreenView = ({
       />
 
       <View style={s.inputContainer}>
-        <Text>name: {name}</Text>
         <Input
           multiline
           style={s.input}

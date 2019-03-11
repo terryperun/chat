@@ -20,14 +20,15 @@ const RenderItem = ({ item, index, messages }) => {
     'DD MMM YYYY hh:mm a',
   );
 
-  const title = isSenderSame(
-    item.dateTime,
-    messages[itemIndex(index)].dateTime,
-  ) ? (
-    <View style={s.timeTitle}>
-      <Text>{titleTime}</Text>
-    </View>
-  ) : null;
+  const title =
+    isSenderSame(
+      item.dateTime,
+      messages[itemIndex(index)].dateTime,
+    ) || firstMessageDate ? (
+      <View style={s.titleTime}>
+        <Text>{titleTime}</Text>
+      </View>
+    ) : null;
 
   return (
     <View style={s.container}>
@@ -36,16 +37,11 @@ const RenderItem = ({ item, index, messages }) => {
         key={index}
         style={[
           s.messageContainer,
-          item.fromUser === 'Taras' && s.userSend,
+          item.fromUser === 'Taras' ? s.userSend : s.interlocutor,
         ]}
       >
-        {firstMessageDate ? (
-          <View style={s.timeTitle}>
-            <Text>{titleTime}</Text>
-          </View>
-        ) : null}
         <View style={s.message}>
-          <Text>{item.message}</Text>
+          <Text style={s.text}>{item.message}</Text>
         </View>
       </View>
     </View>

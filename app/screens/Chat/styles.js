@@ -1,28 +1,15 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../styles';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // height: 400,
-    // justifyContent: 'space-between',
-  },
-  message: {
-    margin: 10,
-    backgroundColor: 'purple',
-    borderRadius: 10,
-    minHeight: 30,
-    width: 100,
-  },
-
-  userSend: {
-    alignItems: 'flex-end',
+    backgroundColor: colors.white,
   },
   inputContainer: {
-    backgroundColor: 'green',
-  },
-  input: {
-    borderColor: 'black',
-    // border,
+    backgroundColor: 'transparent',
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderColor: colors.border,
   },
 });
 export default styles;
