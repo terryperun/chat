@@ -11,20 +11,33 @@ const RenderItem = ({ item, index, messages }) => {
     return index;
   };
 
-  isSenderSame = (currentMessage, prevMessage) =>
-    currentMessage - prevMessage > 10800000;
+  let titleTime;
+  isSenderSame = (currentMessage, prevMessage) => {
+    const timeNow = new Date().getTime();
+    const timeNowDifference = timeNow - currentMessage;
+    const timeDifference = currentMessage - prevMessage;
+    if (timeNowDifference > 86400000) {
+      if (timeDifference > 86400000) {
+        titleTime = moment(item.dateTime, 'x').format('MMM Do YY');
+        return true;
+      }
+    } else if (timeDifference > 10800000) {
+      titleTime = moment(item.dateTime, 'x').format('LT');
+      return true;
+    }
+  };
 
   const firstMessageDate = index === messages.length - 1;
-
-  const titleTime = moment(item.dateTime, 'x').format(
-    'DD MMM YYYY hh:mm a',
-  );
+  if (firstMessageDate) {
+    titleTime = moment(item.dateTime, 'x').format('MMM Do YY');
+  }
 
   const title =
+    firstMessageDate ||
     isSenderSame(
       item.dateTime,
       messages[itemIndex(index)].dateTime,
-    ) || firstMessageDate ? (
+    ) ? (
       <View style={s.titleTime}>
         <Text>{titleTime}</Text>
       </View>
