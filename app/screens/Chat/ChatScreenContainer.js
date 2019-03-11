@@ -39,6 +39,18 @@ const enhance = compose(
         props.sendMessage(mess);
         props.setMessageInputText('');
       }
+      const delayMessage = () => {
+        const body = () => ({
+          id: uuid(),
+          fromUser: 'Reeves',
+          toUser: 'Taras',
+          message: 'Whats uuuuuup',
+          dateTime: new Date().getTime(),
+        });
+        const mess = body(props.messageInputText);
+        props.sendMessage(mess);
+      };
+      setTimeout(delayMessage, 1000);
     },
   }),
 );
