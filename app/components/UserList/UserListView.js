@@ -11,9 +11,10 @@ const UserListView = ({
   lastMessage,
   countNewMessage,
   cutMessage,
+  onPress,
 }) => {
   return (
-    <TouchableOpacity style={s.container}>
+    <TouchableOpacity style={s.container} onPress={onPress}>
       <View style={s.nameAndMessageContainer}>
         <View style={s.nameContainer}>
           <Text>{name}</Text>
