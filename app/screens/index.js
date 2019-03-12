@@ -1,5 +1,5 @@
-import HomeScreen from './Home/HomeScreenView';
-import ChatScreen from './Chat/ChatScreenView';
-import UserScreen from './User/UserScreenView';
+import HomeScreen from './Home/HomeScreenContainer';
+import ChatScreen from './Chat/ChatScreenContainer';
+import UserScreen from './User/UserScreenContainer';
 
 export { HomeScreen, ChatScreen, UserScreen };

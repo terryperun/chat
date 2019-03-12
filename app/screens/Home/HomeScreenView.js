@@ -1,13 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 
 import { UserList } from '../../components';
-import { data } from '../../mocks';
+// import { data } from '../../mocks';
 
-const HomeScreenView = () => {
+const HomeScreenView = ({ data }) => {
   const items = data.map((i) => (
     <UserList
       key={i.id}
+      id={i.id}
       name={i.name}
       time={i.time}
       lastMessage={i.lastMessage}
