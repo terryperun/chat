@@ -13,7 +13,12 @@ const styles = StyleSheet.create({
     minWidth: '5%',
     maxWidth: '65%',
   },
-  inp: {},
+  fromInterlocutor: {
+    backgroundColor: '#E3E1E9',
+  },
+  textFromInterlocutor: {
+    color: colors.black,
+  },
 
   userSend: {
     alignItems: 'flex-end',

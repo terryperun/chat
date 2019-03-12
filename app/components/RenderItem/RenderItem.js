@@ -42,7 +42,8 @@ const RenderItem = ({ item, index, messages }) => {
         <Text>{titleTime}</Text>
       </View>
     ) : null;
-
+  const fromUser = item.fromUser === 'Taras';
+  const fromInterlocutor = item.fromUser !== 'Taras';
   return (
     <View style={s.container}>
       <View>{title}</View>
@@ -50,11 +51,20 @@ const RenderItem = ({ item, index, messages }) => {
         key={index}
         style={[
           s.messageContainer,
-          item.fromUser === 'Taras' ? s.userSend : s.interlocutor,
+          fromUser ? s.userSend : s.interlocutor,
         ]}
       >
-        <View style={s.message}>
-          <Text style={s.text}>{item.message}</Text>
+        <View
+          style={[s.message, fromInterlocutor && s.fromInterlocutor]}
+        >
+          <Text
+            style={[
+              s.text,
+              fromInterlocutor && s.textFromInterlocutor,
+            ]}
+          >
+            {item.message}
+          </Text>
         </View>
       </View>
     </View>
